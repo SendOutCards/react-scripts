@@ -1,8 +1,11 @@
 {
-  "name": "@sendoutcards/react-scripts",
+  "name": "react-scripts",
   "version": "1.0.0",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "SendOutCards/react-scripts",
+  "description": "Configuration and scripts for SendOutCards.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:SendOutCards/react-scripts.git"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=6"

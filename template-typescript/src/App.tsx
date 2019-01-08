@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.scss";
 
 class App extends Component {
   render() {
@@ -13,11 +13,11 @@ class App extends Component {
           </p>
           <a
             className="App-link"
-            href="https://reactjs.org"
+            href="https://www.sendoutcards.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            SendOutCards
           </a>
         </header>
       </div>
