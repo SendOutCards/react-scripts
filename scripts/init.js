@@ -106,6 +106,16 @@ module.exports = function(
     extends: "react-app"
   };
 
+  // Setup prettier config
+  appPackage.prettier = {
+    semi: false,
+    singleQuote: true,
+    bracketSpacing: true,
+    arrowParens: "avoid",
+    trailingComma: "all",
+    jsxBracketSameLine: false
+  };
+
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
 
