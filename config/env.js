@@ -11,8 +11,9 @@
 const fs = require("fs");
 const path = require("path");
 const paths = require("./paths");
+const packageInfo = require(paths.appPackageJson);
 
-process.env.APP_VERSION = paths.appPackageJson.version;
+process.env.APP_VERSION = packageInfo.version;
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve("./paths")];
 
@@ -86,7 +87,7 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
-        APP_VERSION: process.env.APP_VERSION || paths.appPackageJson.version
+        APP_VERSION: process.env.APP_VERSION || packageInfo.version
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
