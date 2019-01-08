@@ -1,0 +1,32 @@
+import { Interpolation } from "@emotion/css";
+
+export default {
+  App: {
+    textAlign: "center"
+  } as Interpolation,
+  AppLogo: {
+    animation: "App-logo-spin infinite 20s linear",
+    height: "40vmin"
+  },
+  AppHeader: {
+    backgroundColor: "#282c34",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "calc(10px + 2vmin)",
+    color: "white"
+  } as Interpolation,
+  AppLink: {
+    color: "#61dafb"
+  },
+  "@keyframes App-logo-spin": {
+    from: {
+      transform: "rotate(0deg)"
+    },
+    to: {
+      transform: "rotate(360deg)"
+    }
+  }
+};
