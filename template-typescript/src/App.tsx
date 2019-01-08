@@ -9,11 +9,12 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.tsx</code> and save to reload.
+            Edit <code>src/App.tsx</code> and save to reload. #61DAFB
           </p>
+          <p>Version: {process.env.APP_VERSION}</p>
           <a
             className="App-link"
-            href="https://www.sendoutcards.com"
+            href="https://github.com/SendOutCards"
             target="_blank"
             rel="noopener noreferrer"
           >

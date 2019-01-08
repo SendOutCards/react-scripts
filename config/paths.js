@@ -149,8 +149,8 @@ if (
     // These properties only exist before ejecting:
     ownPath: resolveOwn("."),
     ownNodeModules: resolveOwn("node_modules"),
-    appTypeDeclarations: resolveOwn("template/src/react-app-env.d.ts"),
-    ownTypeDeclarations: resolveOwn("lib/react-app.d.ts")
+    appTypeDeclarations: resolveOwn("template/src/sendoutcards-app-env.d.ts"),
+    ownTypeDeclarations: resolveOwn("lib/sendoutcards-app.d.ts")
   };
 }
 // @remove-on-eject-end
