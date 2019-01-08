@@ -136,7 +136,7 @@ if (
     appBuild: resolveOwn("../../build"),
     appPublic: resolveOwn("template/public"),
     appHtml: resolveOwn("template/public/index.html"),
-    appIndexJs: resolveModule(resolveOwn, "template/src/index"),
+    appIndexTs: resolveModule(resolveOwn, "template/src/index"),
     appPackageJson: resolveOwn("package.json"),
     appSrc: resolveOwn("template/src"),
     appTsConfig: resolveOwn("template/tsconfig.json"),
