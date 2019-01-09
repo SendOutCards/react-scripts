@@ -81,7 +81,8 @@
   },
   "devDependencies": {
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "typescript": "^3.2.2"
   },
   "optionalDependencies": {
     "fsevents": "1.2.4"
