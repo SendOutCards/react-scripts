@@ -11,32 +11,30 @@
     "arrow-parens": false,
     "arrow-return-shorthand": [false],
     "ban-types": false, // to change
-    "class-name": false, // to change
+    "class-name": true,
     "comment-format": [true, "check-space"],
-    "forin": false, // to change
-    "import-blacklist": [true, "lodash", "material-ui"],
+    "forin": true,
+    "import-blacklist": [true, "lodash"],
     "interface-over-type-literal": false,
     "interface-name": false,
     "max-classes-per-file": true,
     "member-access": false,
     "member-ordering": [true, { "order": "fields-first" }],
     "newline-before-return": false,
-    "no-any": false,
-    "no-console": false, // to change
-    "no-empty": false, // to remove
+    "no-any": true,
+    "no-console": true,
     "no-empty-interface": false,
     "no-import-side-effect": [false], // to change
     "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
     "no-invalid-this": [true, "check-function-in-method"],
     "no-namespace": false, // to change
-    "no-native-set": true,
     "no-non-null-assertion": true,
     "no-null-keyword": false,
     "no-require-imports": false,
     "no-shadowed-variable": false,
     "no-submodule-imports": false, // [true, "@src", "rxjs", "soc-components"] fix this
     "no-this-assignment": [true, { "allow-destructuring": true }],
-    "no-unused-expression": false, // to change
+    "no-unused-expression": true,
     "no-parameter-reassignment": true,
     "object-literal-sort-keys": false,
     "object-literal-shorthand": false,
@@ -47,11 +45,11 @@
     "prefer-for-of": true,
     "prefer-method-signature": false,
     "prefer-template": [true, "allow-single-concat"],
-    "triple-equals": false, // "triple-equals": [true, "allow-null-check"],
+    "triple-equals": [true, "allow-null-check"],
     "type-literal-delimiter": false, // true
     "typedef": false, // "typedef": [true, "parameter", "property-declaration"],
     "variable-name": [
-      false,
+      true,
       "ban-keywords",
       "check-format",
       "allow-pascal-case",
@@ -72,7 +70,7 @@
     ]
   },
   "jsRules": {
-    "no-console": false, // to change
+    "no-console": true,
     "object-literal-sort-keys": false
   },
   "defaultSeverity": "error",
