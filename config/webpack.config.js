@@ -355,8 +355,8 @@ module.exports = function(webpackEnv) {
                 babelrc: false,
                 configFile: false,
                 presets: [
-                  require.resolve('@emotion/babel-preset-css-prop'),
                   require.resolve('babel-preset-react-app'),
+                  require.resolve('@emotion/babel-preset-css-prop'),
                 ],
                 // Make sure we have a unique cache identifier, erring on the
                 // side of caution.
@@ -407,7 +407,7 @@ module.exports = function(webpackEnv) {
                 configFile: false,
                 compact: false,
                 presets: [
-                  require.resolve('@emotion/babel-preset-css-prop'),
+                  [require.resolve('@emotion/babel-preset-css-prop')],
                   [
                     require.resolve('babel-preset-react-app/dependencies'),
                     { helpers: true },

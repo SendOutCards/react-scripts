@@ -1,11 +1,21 @@
 import { Interpolation } from '@emotion/css'
+import { keyframes } from '@emotion/core'
+
+export const AppLogoSpin = keyframes({
+  from: {
+    transform: 'rotate(0deg)',
+  },
+  to: {
+    transform: 'rotate(360deg)',
+  },
+})
 
 export default {
   App: {
     textAlign: 'center',
   } as Interpolation,
   AppLogo: {
-    animation: 'App-logo-spin infinite 20s linear',
+    animation: `${AppLogoSpin} infinite 20s linear`,
     height: '40vmin',
   },
   AppHeader: {
@@ -19,14 +29,6 @@ export default {
     color: 'white',
   } as Interpolation,
   AppLink: {
-    color: '#61dafb',
-  },
-  '@keyframes App-logo-spin': {
-    from: {
-      transform: 'rotate(0deg)',
-    },
-    to: {
-      transform: 'rotate(360deg)',
-    },
+    color: '#f26ec5',
   },
 }
