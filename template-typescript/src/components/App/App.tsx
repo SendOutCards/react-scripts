@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
-import logo from './logo.svg'
-import styles from './AppStyles'
+import logo from '../../assets/logo.svg'
+import styles from './styles'
 
 const App: FunctionComponent = props => {
   return (
