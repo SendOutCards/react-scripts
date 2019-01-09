@@ -311,13 +311,17 @@ module.exports = function(webpackEnv) {
             {
               options: {
                 // @remove-on-eject-begin
-                baseConfig: {
+                configuration: {
                   extends: [
                     require.resolve('tslint-react'),
                     require.resolve('tslint-immutable'),
                     require.resolve('tslint-config-prettier'),
                   ],
+                  rules: {
+                    noAny: true,
+                  },
                 },
+
                 tsConfigFile: paths.appTsConfig,
                 emitErrors: true,
                 // @remove-on-eject-end
