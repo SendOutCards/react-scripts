@@ -93,16 +93,21 @@ function verifyTypeScriptSetup() {
       parsedValue: ts.ScriptTarget.ES5,
       suggested: 'es5',
     },
-    lib: { suggested: ['dom', 'dom.iterable', 'esnext'] },
     allowJs: { suggested: true },
     skipLibCheck: { suggested: true },
     esModuleInterop: { suggested: true },
     allowSyntheticDefaultImports: { suggested: true },
     strict: { suggested: true },
     forceConsistentCasingInFileNames: { suggested: true },
+    paths: {
+      suggested: {
+        '@src/*': ['src/*'],
+      },
+    },
 
     // These values are required and cannot be changed by the user
     // Keep this in sync with the webpack config
+    lib: { value: ['dom', 'dom.iterable', 'esnext'] },
     module: {
       parsedValue: ts.ModuleKind.ESNext,
       value: 'esnext',
@@ -127,7 +132,7 @@ function verifyTypeScriptSetup() {
       value: undefined,
       reason: 'absolute imports are not supported (yet)',
     },
-    paths: { value: undefined, reason: 'aliased imports are not supported' },
+    // paths: { value: undefined, reason: 'aliased imports are not supported' },
   }
 
   const formatDiagnosticHost = {
@@ -216,7 +221,7 @@ function verifyTypeScriptSetup() {
 
   // tsconfig will have the merged "extends" by this point
   if (parsedTsConfig.extends == null) {
-    appTsConfig.extends = ['@sendoutcards/tsconfig']
+    appTsConfig.extends = '@sendoutcards/tsconfig'
     messages.push(
       `${chalk.cyan('extends')} should be ${chalk.cyan.bold(
         '@sendoutcards/tsconfig',
