@@ -102,9 +102,9 @@ module.exports = function(
   }
 
   // Setup the eslint config
-  appPackage.eslintConfig = {
-    extends: 'react-app',
-  }
+  // appPackage.eslintConfig = {
+  //   extends: 'react-app',
+  // }
 
   // Setup prettier config
   appPackage.prettier = {
