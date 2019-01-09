@@ -13,7 +13,7 @@ class App extends Component {
         <header css={styles.AppHeader}>
           <img src={logo} css={styles.AppLogo} alt="logo" />
           <p>
-            Edit <code>src/App.tsx</code> and save to reload.
+            Edit <code>src/components/App/App.tsx</code> and save to reload.
           </p>
           <a
             css={styles.AppLink}
