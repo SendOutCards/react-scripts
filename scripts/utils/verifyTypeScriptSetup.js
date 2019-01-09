@@ -89,12 +89,12 @@ function verifyTypeScriptSetup() {
     // These are suggested values and will be set when not present in the
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
+    baseUrl: { suggested: './' },
     paths: {
       suggested: {
         '@src/*': ['src/*'],
       },
     },
-    baseUrl: { suggested: './' },
     target: {
       parsedValue: ts.ScriptTarget.ES5,
       suggested: 'es5',
@@ -102,12 +102,12 @@ function verifyTypeScriptSetup() {
     allowJs: { suggested: true },
     skipLibCheck: { suggested: true },
     esModuleInterop: { suggested: true },
-    allowSyntheticDefaultImports: { suggested: true },
-    strict: { suggested: true },
     forceConsistentCasingInFileNames: { suggested: true },
 
     // These values are required and cannot be changed by the user
     // Keep this in sync with the webpack config
+    allowSyntheticDefaultImports: { value: true },
+    strict: { value: true },
     lib: { value: ['dom', 'dom.iterable', 'esnext'] },
     module: {
       parsedValue: ts.ModuleKind.ESNext,
