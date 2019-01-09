@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import logo from "./logo.svg";
-import "./App.scss";
+import React, { FunctionComponent } from 'react'
+import logo from './logo.svg'
+import './App.scss'
 
 const App: FunctionComponent = props => {
   return (
@@ -23,7 +23,7 @@ const App: FunctionComponent = props => {
         </a>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

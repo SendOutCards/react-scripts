@@ -5,21 +5,21 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-'use strict';
+'use strict'
 
-const fs = require('fs');
-const chalk = require('chalk');
-const paths = require('../../config/paths');
+const fs = require('fs')
+const chalk = require('chalk')
+const paths = require('../../config/paths')
 
 module.exports = (resolve, rootDir, isEjecting) => {
   // Use this instead of `paths.testsSetup` to avoid putting
   // an absolute filename into configuration after ejecting.
-  const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/);
+  const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/)
   const setupTestsFileExtension =
-    (setupTestsMatches && setupTestsMatches[1]) || 'js';
+    (setupTestsMatches && setupTestsMatches[1]) || 'js'
   const setupTestsFile = fs.existsSync(paths.testsSetup)
     ? `<rootDir>/src/setupTests.${setupTestsFileExtension}`
-    : undefined;
+    : undefined
 
   const config = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
@@ -50,7 +50,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
         : resolve('config/jest/babelTransform.js'),
       '^.+\\.css$': resolve('config/jest/cssTransform.js'),
       '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': resolve(
-        'config/jest/fileTransform.js'
+        'config/jest/fileTransform.js',
       ),
     },
     transformIgnorePatterns: [
@@ -62,13 +62,13 @@ module.exports = (resolve, rootDir, isEjecting) => {
       '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     },
     moduleFileExtensions: [...paths.moduleFileExtensions, 'node'].filter(
-      ext => !ext.includes('mjs')
+      ext => !ext.includes('mjs'),
     ),
-  };
-  if (rootDir) {
-    config.rootDir = rootDir;
   }
-  const overrides = Object.assign({}, require(paths.appPackageJson).jest);
+  if (rootDir) {
+    config.rootDir = rootDir
+  }
+  const overrides = Object.assign({}, require(paths.appPackageJson).jest)
   const supportedKeys = [
     'collectCoverageFrom',
     'coverageReporters',
@@ -79,18 +79,18 @@ module.exports = (resolve, rootDir, isEjecting) => {
     'resetModules',
     'snapshotSerializers',
     'watchPathIgnorePatterns',
-  ];
+  ]
   if (overrides) {
     supportedKeys.forEach(key => {
       if (overrides.hasOwnProperty(key)) {
-        config[key] = overrides[key];
-        delete overrides[key];
+        config[key] = overrides[key]
+        delete overrides[key]
       }
-    });
-    const unsupportedKeys = Object.keys(overrides);
+    })
+    const unsupportedKeys = Object.keys(overrides)
     if (unsupportedKeys.length) {
       const isOverridingSetupFile =
-        unsupportedKeys.indexOf('setupTestFrameworkScriptFile') > -1;
+        unsupportedKeys.indexOf('setupTestFrameworkScriptFile') > -1
 
       if (isOverridingSetupFile) {
         console.error(
@@ -100,9 +100,9 @@ module.exports = (resolve, rootDir, isEjecting) => {
               ' in your package.json.\n\n' +
               'Remove it from Jest configuration, and put the initialization code in ' +
               chalk.bold('src/setupTests.js') +
-              '.\nThis file will be loaded automatically.\n'
-          )
-        );
+              '.\nThis file will be loaded automatically.\n',
+          ),
+        )
       } else {
         console.error(
           chalk.red(
@@ -122,13 +122,13 @@ module.exports = (resolve, rootDir, isEjecting) => {
               chalk.bold('npm run eject') +
               ' but remember that this is a one-way operation. ' +
               'You may also file an issue with Create React App to discuss ' +
-              'supporting more options out of the box.\n'
-          )
-        );
+              'supporting more options out of the box.\n',
+          ),
+        )
       }
 
-      process.exit(1);
+      process.exit(1)
     }
   }
-  return config;
-};
+  return config
+}
