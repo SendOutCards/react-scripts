@@ -223,7 +223,7 @@ function verifyTypeScriptSetup() {
   if (parsedTsConfig.extends == null) {
     appTsConfig.extends = '@sendoutcards/tsconfig'
     messages.push(
-      `${chalk.cyan('extends')} should be ${chalk.cyan.bold(
+      `${chalk.magenta('extends')} should be ${chalk.magenta.bold(
         '@sendoutcards/tsconfig',
       )}`,
     )
@@ -242,7 +242,7 @@ function verifyTypeScriptSetup() {
       console.log(
         chalk.bold(
           'Your',
-          chalk.cyan('tsconfig.json'),
+          chalk.magenta('tsconfig.json'),
           'has been populated with default values.',
         ),
       )
@@ -251,7 +251,7 @@ function verifyTypeScriptSetup() {
       console.warn(
         chalk.bold(
           'The following changes are being made to your',
-          chalk.cyan('tsconfig.json'),
+          chalk.magenta('tsconfig.json'),
           'file:',
         ),
       )
