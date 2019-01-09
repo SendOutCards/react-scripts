@@ -216,8 +216,7 @@ inquirer
     // Add Babel config
     console.log(`  Adding ${cyan('Babel')} preset`)
     appPackage.babel = {
-      plugins: ['emotion'],
-      presets: ['react-app'],
+      presets: ['@emotion/babel-preset-css-prop', 'react-app'],
     }
 
     // Add ESlint config

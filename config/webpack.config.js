@@ -407,6 +407,7 @@ module.exports = function(webpackEnv) {
                 configFile: false,
                 compact: false,
                 presets: [
+                  require.resolve('@emotion/babel-preset-css-prop'),
                   [
                     require.resolve('babel-preset-react-app/dependencies'),
                     { helpers: true },
