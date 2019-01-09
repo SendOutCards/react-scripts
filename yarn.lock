@@ -962,10 +962,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@sendoutcards/tsconfig@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sendoutcards/tsconfig/-/tsconfig-1.0.1.tgz#2dab93ad5c833a5a8878213a16f36d3024ba98b0"
-  integrity sha512-k++lZL8OiE/VEi01BGnKnEeb25K9Q0nAnr6/MUahLZjIQJHBmXJjWbDuIkWelAOZAfYsKeUWkWMG6Cf1YJ/tdw==
+"@sendoutcards/tsconfig@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@sendoutcards/tsconfig/-/tsconfig-1.0.2.tgz#523c56b71997e0591303de5b9d7e2f2e4ad6d8a2"
+  integrity sha512-S4uaaoFBCjsLTCp70ILjjCY1PxVCobhPKAL+IvLquhplM41Fmy3r6RotJdB1l21tajhOTFPFEjXg7EjAXRNPzA==
 
 "@svgr/core@^2.4.1":
   version "2.4.1"
