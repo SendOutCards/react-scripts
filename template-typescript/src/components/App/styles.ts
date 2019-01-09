@@ -1,7 +1,7 @@
 import { Interpolation } from '@emotion/css'
 import { keyframes } from '@emotion/core'
 
-export const AppLogoSpin = keyframes({
+const AppLogoSpin = keyframes({
   from: {
     transform: 'rotate(0deg)',
   },
