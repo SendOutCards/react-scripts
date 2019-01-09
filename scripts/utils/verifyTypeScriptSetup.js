@@ -89,7 +89,6 @@ function verifyTypeScriptSetup() {
     // These are suggested values and will be set when not present in the
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
-    extends: '@sendoutcards/tsconfig',
     target: {
       parsedValue: ts.ScriptTarget.ES5,
       suggested: 'es5',
@@ -213,6 +212,16 @@ function verifyTypeScriptSetup() {
           (reason != null ? ` (${reason})` : ''),
       )
     }
+  }
+
+  // tsconfig will have the merged "extends" by this point
+  if (parsedTsConfig.extends == null) {
+    appTsConfig.extends = ['@sendoutcards/tsconfig']
+    messages.push(
+      `${chalk.cyan('extends')} should be ${chalk.cyan.bold(
+        '@sendoutcards/tsconfig',
+      )}`,
+    )
   }
 
   // tsconfig will have the merged "include" and "exclude" by this point
