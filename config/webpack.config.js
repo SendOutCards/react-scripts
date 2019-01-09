@@ -373,6 +373,7 @@ module.exports = function(webpackEnv) {
                 ),
                 // @remove-on-eject-end
                 plugins: [
+                  require.resolve('babel-plugin-emotion'),
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
