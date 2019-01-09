@@ -107,6 +107,7 @@ function verifyTypeScriptSetup() {
     // These values are required and cannot be changed by the user
     // Keep this in sync with the webpack config
     allowSyntheticDefaultImports: { value: true },
+    rootDir: { value: 'src' },
     strict: { value: true },
     lib: { value: ['dom', 'dom.iterable', 'esnext'] },
     module: {
