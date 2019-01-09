@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from '../../assets/logo.svg'
 import styles from './styles'
+import Version from '../Version/Version'
 
 class App extends Component {
   render() {
@@ -11,9 +12,6 @@ class App extends Component {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
-          <p>
-            Version: <code>{process.env.APP_VERSION}</code>
-          </p>
           <a
             css={styles.AppLink}
             href="https://github.com/SendOutCards"
@@ -22,6 +20,7 @@ class App extends Component {
           >
             SendOutCards
           </a>
+          <Version />
         </header>
       </div>
     )
