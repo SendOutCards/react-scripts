@@ -1,5 +1,5 @@
-import { Interpolation } from '@emotion/css'
 import { keyframes } from '@emotion/core'
+import { Interpolation } from '@emotion/css'
 
 const AppLogoSpin = keyframes({
   from: {
