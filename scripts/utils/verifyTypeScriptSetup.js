@@ -89,6 +89,7 @@ function verifyTypeScriptSetup() {
     // These are suggested values and will be set when not present in the
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
+    extends: '@sendoutcards/tsconfig',
     target: {
       parsedValue: ts.ScriptTarget.ES5,
       suggested: 'es5',
