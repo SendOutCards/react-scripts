@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 function load(users) {
   return [
@@ -14,26 +14,26 @@ function load(users) {
     { id: 2, name: '2' },
     { id: 3, name: '3' },
     ...users,
-  ];
+  ]
 }
 
 export default class extends Component {
   static propTypes = {
     onReady: PropTypes.func.isRequired,
-  };
+  }
 
   constructor(props) {
-    super(props);
-    this.state = { users: [] };
+    super(props)
+    this.state = { users: [] }
   }
 
   async componentDidMount() {
-    const users = load([{ id: 42, name: '42' }]);
-    this.setState({ users });
+    const users = load([{ id: 42, name: '42' }])
+    this.setState({ users })
   }
 
   componentDidUpdate() {
-    this.props.onReady();
+    this.props.onReady()
   }
 
   render() {
@@ -43,6 +43,6 @@ export default class extends Component {
           <div key={user.id}>{user.name}</div>
         ))}
       </div>
-    );
+    )
   }
 }

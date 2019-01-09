@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React from 'react'
 
 export default () => (
   <span>
@@ -18,4 +18,4 @@ export default () => (
       {process.env.REACT_APP_EXPAND_EXISTING}
     </span>
   </span>
-);
+)

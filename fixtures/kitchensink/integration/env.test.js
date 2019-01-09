@@ -5,86 +5,88 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import initDOM from './initDOM';
+import initDOM from './initDOM'
 
 describe('Integration', () => {
   describe('Environment variables', () => {
     it('file env variables', async () => {
-      const doc = await initDOM('file-env-variables');
+      const doc = await initDOM('file-env-variables')
 
       expect(
-        doc.getElementById('feature-file-env-original-1').textContent
-      ).toBe('from-original-env-1');
+        doc.getElementById('feature-file-env-original-1').textContent,
+      ).toBe('from-original-env-1')
       expect(
-        doc.getElementById('feature-file-env-original-2').textContent
-      ).toBe('override-from-original-local-env-2');
+        doc.getElementById('feature-file-env-original-2').textContent,
+      ).toBe('override-from-original-local-env-2')
 
       if (process.env.NODE_ENV === 'production') {
         expect(doc.getElementById('feature-file-env').textContent).toBe(
-          'production'
-        );
+          'production',
+        )
         expect(doc.getElementById('feature-file-env-x').textContent).toBe(
-          'x-from-production-env'
-        );
+          'x-from-production-env',
+        )
       } else {
         expect(doc.getElementById('feature-file-env').textContent).toBe(
-          'development'
-        );
+          'development',
+        )
         expect(doc.getElementById('feature-file-env-x').textContent).toBe(
-          'x-from-development-env'
-        );
+          'x-from-development-env',
+        )
       }
-      doc.defaultView.close();
-    });
+      doc.defaultView.close()
+    })
 
     it('NODE_PATH', async () => {
-      const doc = await initDOM('node-path');
+      const doc = await initDOM('node-path')
 
-      expect(doc.getElementById('feature-node-path').childElementCount).toBe(4);
-      doc.defaultView.close();
-    });
+      expect(doc.getElementById('feature-node-path').childElementCount).toBe(4)
+      doc.defaultView.close()
+    })
 
     it('PUBLIC_URL', async () => {
-      const doc = await initDOM('public-url');
+      const doc = await initDOM('public-url')
 
       const prefix =
         process.env.NODE_ENV === 'development'
           ? ''
-          : 'http://www.example.org/spa';
+          : 'http://www.example.org/spa'
       expect(doc.getElementById('feature-public-url').textContent).toBe(
-        `${prefix}.`
-      );
+        `${prefix}.`,
+      )
       expect(
-        doc.querySelector('head link[rel="shortcut icon"]').getAttribute('href')
-      ).toBe(`${prefix}/favicon.ico`);
-      doc.defaultView.close();
-    });
+        doc
+          .querySelector('head link[rel="shortcut icon"]')
+          .getAttribute('href'),
+      ).toBe(`${prefix}/favicon.ico`)
+      doc.defaultView.close()
+    })
 
     it('shell env variables', async () => {
-      const doc = await initDOM('shell-env-variables');
+      const doc = await initDOM('shell-env-variables')
 
       expect(
-        doc.getElementById('feature-shell-env-variables').textContent
-      ).toBe('fromtheshell.');
-      doc.defaultView.close();
-    });
+        doc.getElementById('feature-shell-env-variables').textContent,
+      ).toBe('fromtheshell.')
+      doc.defaultView.close()
+    })
 
     it('expand .env variables', async () => {
-      const doc = await initDOM('expand-env-variables');
+      const doc = await initDOM('expand-env-variables')
 
       expect(doc.getElementById('feature-expand-env-1').textContent).toBe(
-        'basic'
-      );
+        'basic',
+      )
       expect(doc.getElementById('feature-expand-env-2').textContent).toBe(
-        'basic'
-      );
+        'basic',
+      )
       expect(doc.getElementById('feature-expand-env-3').textContent).toBe(
-        'basic'
-      );
+        'basic',
+      )
       expect(
-        doc.getElementById('feature-expand-env-existing').textContent
-      ).toBe('fromtheshell');
-      doc.defaultView.close();
-    });
-  });
-});
+        doc.getElementById('feature-expand-env-existing').textContent,
+      ).toBe('fromtheshell')
+      doc.defaultView.close()
+    })
+  })
+})
