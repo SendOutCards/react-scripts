@@ -310,13 +310,10 @@ module.exports = function(webpackEnv) {
           use: [
             {
               options: {
-                // formatter: require.resolve('react-dev-utils/eslintFormatter'),
-                // eslintPath: require.resolve('tslint'),
                 // @remove-on-eject-begin
                 baseConfig: {
                   extends: [require.resolve('tslint-config-prettier')],
                 },
-                // ignore: false,
                 tsConfigFile: paths.appTsConfig,
                 // @remove-on-eject-end
               },
