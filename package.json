@@ -33,7 +33,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.6",
     "@emotion/core": "^10.0.6",
     "@emotion/css": "^10.0.6",
-    "@sendoutcards/tsconfig": "^1.0.2",
+    "@sendoutcards/tsconfig": "^1.0.3",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
@@ -99,6 +99,5 @@
   "homepage": "https://github.com/SendOutCards/react-scripts#readme",
   "keywords": [
     "react-scripts"
-  ],
-  "author": "Jared M. Peterson"
+  ]
 }
