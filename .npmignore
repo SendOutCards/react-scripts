@@ -1,2 +1,4 @@
 /fixtures
 .prettierrc
+node_modules
+yarn.lock
