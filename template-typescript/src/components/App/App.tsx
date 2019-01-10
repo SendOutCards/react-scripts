@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+
 // @src imports
 import logo from '@src/assets/logo.svg'
+
 // relative imports
 import Version from '../Version/Version'
+
 // styles
 import styles from './styles'
 
