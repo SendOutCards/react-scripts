@@ -216,14 +216,14 @@ inquirer
     // Add Babel config
     console.log(`  Adding ${cyan('Babel')} preset`)
     appPackage.babel = {
-      presets: ['@emotion/babel-preset-css-prop', 'react-app'],
+      presets: ['react-app', '@emotion/babel-preset-css-prop'],
     }
 
     // Add ESlint config
-    console.log(`  Adding ${cyan('ESLint')} configuration`)
-    appPackage.eslintConfig = {
-      extends: 'react-app',
-    }
+    // console.log(`  Adding ${cyan('ESLint')} configuration`)
+    // appPackage.eslintConfig = {
+    //   extends: 'react-app',
+    // }
 
     fs.writeFileSync(
       path.join(appPath, 'package.json'),
