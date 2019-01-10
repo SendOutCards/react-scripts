@@ -377,7 +377,7 @@ module.exports = function(webpackEnv) {
                     'babel-plugin-named-asset-import',
                     'babel-preset-react-app',
                     'react-dev-utils',
-                    'react-scripts',
+                    '@sendoutcards/react-scripts',
                   ],
                 ),
                 // @remove-on-eject-end
@@ -430,7 +430,7 @@ module.exports = function(webpackEnv) {
                     'babel-plugin-named-asset-import',
                     'babel-preset-react-app',
                     'react-dev-utils',
-                    'react-scripts',
+                    '@sendoutcards/react-scripts',
                   ],
                 ),
                 // @remove-on-eject-end

@@ -115,7 +115,7 @@ module.exports = {
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
-  appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
+  appTypeDeclarations: resolveApp('src/sendoutcards-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/sendoutcards-app.d.ts'),
 }
 
