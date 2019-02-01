@@ -1,6 +1,6 @@
 {
   "name": "@sendoutcards/react-scripts",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Configuration and scripts for SendOutCards.",
   "repository": {
     "type": "git",
@@ -61,7 +61,7 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
-    "prettier": "1.16.1",
+    "prettier": "1.16.3",
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
     "resolve": "1.10.0",
@@ -77,13 +77,12 @@
     "webpack": "4.29.0",
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3",
-    "fsevents": "1.2.4"
+    "workbox-webpack-plugin": "3.6.3"
   },
   "devDependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "typescript": "^3.2.4"
+    "typescript": "^3.3.1"
   },
   "optionalDependencies": {
     "fsevents": "1.2.7"
