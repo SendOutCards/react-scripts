@@ -16,7 +16,7 @@ export default {
   } as Interpolation,
   AppLogo: {
     animation: `${AppLogoSpin} infinite 20s linear`,
-    height: '40vmin',
+    height: '20vmin',
   },
   AppHeader: {
     backgroundColor: '#282c34',
