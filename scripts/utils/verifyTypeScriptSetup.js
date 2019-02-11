@@ -8,7 +8,7 @@
 
 'use strict'
 
-const chalk = require('chalk')
+const chalk = require('react-dev-utils/chalk')
 const fs = require('fs')
 const resolve = require('resolve')
 const path = require('path')
@@ -22,7 +22,9 @@ function writeJson(fileName, object) {
 }
 
 function verifyNoTypeScript() {
-  const typescriptFiles = globby('**/*.(ts|tsx)', { cwd: paths.appSrc })
+  const typescriptFiles = globby(['**/*.(ts|tsx)', '!**/node_modules'], {
+    cwd: paths.appSrc,
+  })
   if (typescriptFiles.length > 0) {
     console.warn(
       chalk.yellow(
@@ -128,13 +130,6 @@ function verifyTypeScriptSetup() {
       value: 'preserve',
       reason: 'JSX is compiled by Babel',
     },
-    // We do not support absolute imports, though this may come as a future
-    // enhancement
-    // baseUrl: {
-    //   value: undefined,
-    //   reason: 'absolute imports are not supported (yet)',
-    // },
-    // paths: { value: undefined, reason: 'aliased imports are not supported' },
   }
 
   const formatDiagnosticHost = {

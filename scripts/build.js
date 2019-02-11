@@ -32,7 +32,7 @@ verifyTypeScriptSetup()
 // @remove-on-eject-end
 
 const path = require('path')
-const chalk = require('chalk')
+const chalk = require('react-dev-utils/chalk')
 const fs = require('fs-extra')
 const webpack = require('webpack')
 const bfj = require('bfj')
@@ -94,11 +94,6 @@ checkBrowsers(paths.appPath, isInteractive)
             chalk.underline(chalk.yellow('keywords')) +
             ' to learn more about each warning.',
         )
-        // console.log(
-        //   'To ignore, add ' +
-        //     chalk.cyan('// eslint-disable-next-line') +
-        //     ' to the line before.\n',
-        // )
       } else {
         console.log(chalk.green('Compiled successfully.\n'))
       }
