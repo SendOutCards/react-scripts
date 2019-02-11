@@ -22,6 +22,7 @@ function verifyPackageTree() {
     // I have not included Babel here because plugins typically don't import Babel (so it's not affected).
     'babel-jest',
     'babel-loader',
+    'tslint',
     'jest',
     'webpack',
     'webpack-dev-server',
