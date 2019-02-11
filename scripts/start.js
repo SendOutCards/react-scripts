@@ -32,7 +32,7 @@ verifyTypeScriptSetup()
 // @remove-on-eject-end
 
 const fs = require('fs')
-const chalk = require('chalk')
+const chalk = require('react-dev-utils/chalk')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const clearConsole = require('react-dev-utils/clearConsole')
@@ -57,7 +57,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexTs])) {
 }
 
 // Tools like Cloud9 rely on this.
-const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8800
+const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000
 const HOST = process.env.HOST || '0.0.0.0'
 
 if (process.env.HOST) {
@@ -114,9 +114,7 @@ checkBrowsers(paths.appPath, isInteractive)
       if (isInteractive) {
         clearConsole()
       }
-      console.log(
-        chalk.magenta('Starting the SendOutCards development server...\n'),
-      )
+      console.log(chalk.magenta('Starting the SendOutCards dev server...\n'))
       openBrowser(urls.localUrlForBrowser)
     })
     ;['SIGINT', 'SIGTERM'].forEach(function(sig) {
