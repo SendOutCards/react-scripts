@@ -1,6 +1,6 @@
 {
   "name": "@sendoutcards/react-scripts",
-  "version": "1.0.13",
+  "version": "1.1.0",
   "description": "Configuration and scripts for SendOutCards.",
   "repository": {
     "type": "git",
@@ -33,10 +33,10 @@
     "@emotion/core": "10.0.7",
     "@emotion/css": "10.0.7",
     "@sendoutcards/tsconfig": "^1.0.3",
-    "@svgr/webpack": "2.4.1",
+    "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.1.0",
-    "babel-loader": "8.0.4",
+    "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "0.3.1",
     "babel-preset-react-app": "7.0.1",
     "bfj": "6.1.1",
