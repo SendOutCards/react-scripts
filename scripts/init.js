@@ -95,8 +95,10 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    start: 'react-scripts start',
     build: 'react-scripts build',
+    clean:
+      'rm -rf ./node_modules package-lock.json yarn.lock && yarn cache clean',
+    start: 'react-scripts start',
     test: 'react-scripts test',
   }
 
