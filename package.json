@@ -29,9 +29,9 @@
   "types": "./lib/sendoutcards-app.d.ts",
   "dependencies": {
     "@babel/core": "7.3.4",
-    "@emotion/babel-preset-css-prop": "10.0.7",
-    "@emotion/core": "10.0.7",
-    "@emotion/css": "10.0.7",
+    "@emotion/babel-preset-css-prop": "10.0.9",
+    "@emotion/core": "10.0.10",
+    "@emotion/css": "10.0.9",
     "@sendoutcards/tsconfig": "^1.0.4",
     "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
