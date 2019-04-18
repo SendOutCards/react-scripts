@@ -312,11 +312,7 @@ module.exports = function(webpackEnv) {
               options: {
                 // @remove-on-eject-begin
                 configuration: {
-                  extends: [
-                    require.resolve('tslint-react'),
-                    require.resolve('tslint-immutable'),
-                    require.resolve('tslint-config-prettier'),
-                  ],
+                  extends: [require.resolve('@sendoutcards/tslint')],
                   rules: {
                     noAny: true,
                   },
