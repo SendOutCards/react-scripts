@@ -91,10 +91,10 @@ function verifyTypeScriptSetup() {
     // These are suggested values and will be set when not present in the
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
-    baseUrl: { suggested: './' },
+    baseUrl: { suggested: './src' },
     paths: {
       suggested: {
-        '@src/*': ['src/*'],
+        '@src/*': ['*'],
       },
     },
     target: {
