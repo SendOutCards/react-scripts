@@ -10,6 +10,7 @@
 
 const chalk = require('react-dev-utils/chalk')
 const fs = require('fs')
+const semver = require('semver')
 const path = require('path')
 
 // We assume that having wrong versions of these
@@ -20,9 +21,10 @@ function verifyPackageTree() {
     // These are packages most likely to break in practice.
     // See https://github.com/facebook/create-react-app/issues/1795 for reasons why.
     // I have not included Babel here because plugins typically don't import Babel (so it's not affected).
+    'babel-eslint',
     'babel-jest',
     'babel-loader',
-    'tslint',
+    'eslint',
     'jest',
     'webpack',
     'webpack-dev-server',
@@ -73,7 +75,7 @@ function verifyPackageTree() {
         fs.readFileSync(maybeDepPackageJson, 'utf8'),
       )
       const expectedVersion = expectedVersionsByDep[dep]
-      if (depPackageJson.version !== expectedVersion) {
+      if (!semver.satisfies(depPackageJson.version, expectedVersion)) {
         console.error(
           chalk.red(
             `\nThere might be a problem with the project dependency tree.\n` +
