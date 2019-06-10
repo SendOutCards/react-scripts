@@ -1,6 +1,6 @@
 {
   "name": "@sendoutcards/react-scripts",
-  "version": "1.1.15",
+  "version": "2.0.0",
   "description": "Configuration and scripts for SendOutCards.",
   "repository": {
     "type": "git",
@@ -31,22 +31,33 @@
     "@babel/core": "7.4.5",
     "@emotion/babel-preset-css-prop": "10.0.9",
     "@emotion/core": "10.0.10",
-    "@emotion/css": "10.0.9",
-    "@sendoutcards/tsconfig": "^1.0.4",
-    "@sendoutcards/tslint": "^0.1.4",
+    "@emotion/css": "10.0.12",
     "@svgr/webpack": "4.3.0",
+    "@typescript-eslint/eslint-plugin": "1.10.2",
+    "@typescript-eslint/parser": "1.10.2",
+    "babel-eslint": "10.0.1",
     "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
     "babel-plugin-named-asset-import": "0.3.2",
     "babel-preset-react-app": "9.0.0",
+    "camelcase": "5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
     "dotenv": "8.0.0",
     "dotenv-expand": "5.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-loader": "2.1.2",
+    "eslint-plugin-flowtype": "3.10.1",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react-hooks": "^1.5.0",
     "file-loader": "4.0.0",
     "fs-extra": "8.0.1",
     "html-webpack-plugin": "^4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
+    "is-wsl": "^2.0.0",
     "jest": "24.8.0",
     "jest-environment-jsdom-fourteen": "^0.1.0",
     "jest-haste-map": "24.8.0",
@@ -59,21 +70,21 @@
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
-    "postcss-normalize": "^8.0.0",
+    "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "6.6.0",
     "postcss-safe-parser": "4.0.1",
-    "prettier": "1.17.1",
+    "prettier": "1.18.2",
     "react-app-polyfill": "1.0.1",
     "react-dev-utils": "9.0.1",
     "resolve": "1.11.1",
     "sass-loader": "7.1.0",
+    "semver": "6.1.1",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.3.0",
-    "tslint": "5.17.0",
-    "tslint-loader": "3.5.4",
+    "ts-pnp": "1.1.2",
     "url-loader": "2.0.0",
     "webpack": "4.33.0",
-    "webpack-dev-server": "3.7.0",
+    "webpack-dev-server": "3.7.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.3.1"
   },
@@ -85,12 +96,18 @@
   "optionalDependencies": {
     "fsevents": "2.0.7"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "homepage": "https://github.com/SendOutCards/react-scripts#readme",
   "keywords": [
     "react-scripts"
