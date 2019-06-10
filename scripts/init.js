@@ -128,7 +128,7 @@ module.exports = function(
   }
 
   // Setup lint-staged
-  appPackage.lintStaged = {
+  appPackage['lint-staged'] = {
     'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}': [
       'prettier --write',
       'git add',
