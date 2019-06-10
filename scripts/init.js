@@ -102,6 +102,11 @@ module.exports = function(
     test: 'react-scripts test',
   }
 
+  // Setup the eslint config
+  appPackage.eslintConfig = {
+    extends: 'react-app',
+  }
+
   // Setup prettier config
   appPackage.prettier = {
     semi: false,
@@ -131,10 +136,7 @@ module.exports = function(
   // Copy the files for the user
   const templatePath = template
     ? path.resolve(originalDirectory, template)
-    : path.join(
-        ownPath,
-        useTypeScript ? 'template-typescript' : 'template-typescript',
-      )
+    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template')
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath)
   } else {
