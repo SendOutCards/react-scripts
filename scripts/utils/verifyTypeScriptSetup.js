@@ -233,6 +233,16 @@ function verifyTypeScriptSetup() {
     )
   }
 
+  // tsconfig will have the merged "extends" by this point
+  if (parsedTsConfig.extends == null) {
+    appTsConfig.extends = '@sendoutcards/tsconfig'
+    messages.push(
+      `${chalk.magenta('extends')} should be ${chalk.magenta.bold(
+        '@sendoutcards/tsconfig',
+      )}`,
+    )
+  }
+
   if (messages.length > 0) {
     if (firstTimeSetup) {
       console.log(
