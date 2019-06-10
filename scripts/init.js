@@ -120,6 +120,21 @@ module.exports = function(
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers
 
+  // Setup Husky
+  appPackage.husky = {
+    hooks: {
+      'pre-commit': 'lint-staged',
+    },
+  }
+
+  // Setup lint-staged
+  appPackage.lintStaged = {
+    'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}': [
+      'prettier --write',
+      'git add',
+    ],
+  }
+
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL,
