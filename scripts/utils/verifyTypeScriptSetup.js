@@ -18,13 +18,17 @@ const immer = require('react-dev-utils/immer').produce
 const globby = require('react-dev-utils/globby').sync
 
 function writeJson(fileName, object) {
-  fs.writeFileSync(fileName, JSON.stringify(object, null, 2) + os.EOL)
+  fs.writeFileSync(
+    fileName,
+    JSON.stringify(object, null, 2).replace(/\n/g, os.EOL) + os.EOL,
+  )
 }
 
 function verifyNoTypeScript() {
-  const typescriptFiles = globby(['**/*.(ts|tsx)', '!**/node_modules'], {
-    cwd: paths.appSrc,
-  })
+  const typescriptFiles = globby(
+    ['**/*.(ts|tsx)', '!**/node_modules', '!**/*.d.ts'],
+    { cwd: paths.appSrc },
+  )
   if (typescriptFiles.length > 0) {
     console.warn(
       chalk.yellow(
@@ -91,12 +95,6 @@ function verifyTypeScriptSetup() {
     // These are suggested values and will be set when not present in the
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
-    baseUrl: { suggested: './src' },
-    paths: {
-      suggested: {
-        '@src/*': ['*'],
-      },
-    },
     target: {
       parsedValue: ts.ScriptTarget.ES5,
       suggested: 'es5',
@@ -105,11 +103,14 @@ function verifyTypeScriptSetup() {
     skipLibCheck: { suggested: true },
     esModuleInterop: { suggested: true },
     forceConsistentCasingInFileNames: { suggested: true },
+    // TODO: Enable for v4.0 (#6936)
+    // noFallthroughCasesInSwitch: { suggested: true },
 
     // These values are required and cannot be changed by the user
     // Keep this in sync with the webpack config
     allowSyntheticDefaultImports: { value: true },
     rootDir: { value: 'src' },
+    baseUrl: { value: './src' },
     strict: { value: true },
     lib: { value: ['dom', 'dom.iterable', 'esnext'] },
     module: {
@@ -129,6 +130,11 @@ function verifyTypeScriptSetup() {
       parsedValue: ts.JsxEmit.Preserve,
       value: 'preserve',
       reason: 'JSX is compiled by Babel',
+    },
+    paths: {
+      value: {
+        '@src/*': ['*'],
+      },
     },
   }
 
@@ -174,14 +180,17 @@ function verifyTypeScriptSetup() {
 
     parsedCompilerOptions = result.options
   } catch (e) {
-    console.error(
-      chalk.red.bold(
-        'Could not parse',
-        chalk.cyan('tsconfig.json') + '.',
-        'Please make sure it contains syntactically correct JSON.',
-      ),
-    )
-    console.error(e && e.message ? `Details: ${e.message}` : '')
+    if (e && e.name === 'SyntaxError') {
+      console.error(
+        chalk.red.bold(
+          'Could not parse',
+          chalk.cyan('tsconfig.json') + '.',
+          'Please make sure it contains syntactically correct JSON.',
+        ),
+      )
+    }
+
+    console.log(e && e.message ? `${e.message}` : '')
     process.exit(1)
   }
 
@@ -216,6 +225,14 @@ function verifyTypeScriptSetup() {
     }
   }
 
+  // tsconfig will have the merged "include" and "exclude" by this point
+  if (parsedTsConfig.include == null) {
+    appTsConfig.include = ['src']
+    messages.push(
+      `${chalk.cyan('include')} should be ${chalk.cyan.bold('src')}`,
+    )
+  }
+
   // tsconfig will have the merged "extends" by this point
   if (parsedTsConfig.extends == null) {
     appTsConfig.extends = '@sendoutcards/tsconfig'
@@ -223,14 +240,6 @@ function verifyTypeScriptSetup() {
       `${chalk.magenta('extends')} should be ${chalk.magenta.bold(
         '@sendoutcards/tsconfig',
       )}`,
-    )
-  }
-
-  // tsconfig will have the merged "include" and "exclude" by this point
-  if (parsedTsConfig.include == null) {
-    appTsConfig.include = ['src']
-    messages.push(
-      `${chalk.cyan('include')} should be ${chalk.cyan.bold('src')}`,
     )
   }
 

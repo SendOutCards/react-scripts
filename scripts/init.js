@@ -102,6 +102,11 @@ module.exports = function(
     test: 'react-scripts test',
   }
 
+  // Setup the eslint config
+  appPackage.eslintConfig = {
+    extends: 'react-app',
+  }
+
   // Setup prettier config
   appPackage.prettier = {
     semi: false,
@@ -114,6 +119,21 @@ module.exports = function(
 
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers
+
+  // Setup Husky
+  appPackage.husky = {
+    hooks: {
+      'pre-commit': 'lint-staged',
+    },
+  }
+
+  // Setup lint-staged
+  appPackage['lint-staged'] = {
+    'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}': [
+      'prettier --write',
+      'git add',
+    ],
+  }
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
@@ -131,10 +151,7 @@ module.exports = function(
   // Copy the files for the user
   const templatePath = template
     ? path.resolve(originalDirectory, template)
-    : path.join(
-        ownPath,
-        useTypeScript ? 'template-typescript' : 'template-typescript',
-      )
+    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template')
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath)
   } else {
