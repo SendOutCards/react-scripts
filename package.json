@@ -1,6 +1,6 @@
 {
   "name": "@sendoutcards/react-scripts",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Configuration and scripts for SendOutCards.",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "private": false,
   "scripts": {
     "postpublish": "git push origin --all; git push origin --tags",
-    "postversion": "npm publish"
+    "postversion": "yarn publish --tag next"
   },
   "engines": {
     "node": ">=8.10"
@@ -38,8 +38,8 @@
     "@emotion/css": "10.0.14",
     "@sendoutcards/tsconfig": "^1.0.4",
     "@svgr/webpack": "4.3.2",
-    "@typescript-eslint/eslint-plugin": "1.12.0",
-    "@typescript-eslint/parser": "1.12.0",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
     "babel-eslint": "10.0.2",
     "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
@@ -50,18 +50,18 @@
     "css-loader": "3.1.0",
     "dotenv": "8.0.0",
     "dotenv-expand": "5.1.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.1.0",
     "eslint-config-react-app": "^4.0.1",
     "eslint-loader": "2.2.1",
-    "eslint-plugin-flowtype": "3.11.1",
-    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-flowtype": "3.12.2",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.14.2",
+    "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.1.0",
     "fs-extra": "8.1.0",
     "html-webpack-plugin": "^4.0.0-beta.5",
-    "husky": "^3.0.1",
+    "husky": "^3.0.2",
     "identity-obj-proxy": "3.0.0",
     "is-wsl": "^2.1.0",
     "jest": "24.8.0",
