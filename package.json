@@ -10,8 +10,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "postpublish": "git push origin --all; git push origin --tags",
-    "postversion": "yarn publish"
+    "postpublish": "git push origin --all; git push origin --tags"
   },
   "engines": {
     "node": ">=8.10"
