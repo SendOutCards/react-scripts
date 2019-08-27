@@ -1,6 +1,6 @@
 {
   "name": "@sendoutcards/react-scripts",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Configuration and scripts for SendOutCards.",
   "repository": {
     "type": "git",
@@ -38,8 +38,8 @@
     "@emotion/css": "10.0.14",
     "@sendoutcards/tsconfig": "^1.0.4",
     "@svgr/webpack": "4.3.2",
-    "@typescript-eslint/eslint-plugin": "2.0.0",
-    "@typescript-eslint/parser": "2.0.0",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
