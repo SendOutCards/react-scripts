@@ -13,8 +13,6 @@ const paths = require('../../config/paths')
 const modules = require('../../config/modules')
 
 module.exports = (resolve, rootDir, isEjecting) => {
-  // Use this instead of `paths.testsSetup` to avoid putting
-  // an absolute filename into configuration after ejecting.
   const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/)
   const setupTestsFileExtension =
     (setupTestsMatches && setupTestsMatches[1]) || 'js'
@@ -23,6 +21,8 @@ module.exports = (resolve, rootDir, isEjecting) => {
     : undefined
 
   const config = {
+    roots: ['<rootDir>/src'],
+
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
 
     setupFiles: [
@@ -72,6 +72,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     'collectCoverageFrom',
     'coverageReporters',
     'coverageThreshold',
+    'coveragePathIgnorePatterns',
     'extraGlobals',
     'globalSetup',
     'globalTeardown',
@@ -85,7 +86,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
   ]
   if (overrides) {
     supportedKeys.forEach(key => {
-      if (overrides.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(overrides, key)) {
         if (Array.isArray(config[key]) || typeof config[key] !== 'object') {
           // for arrays or primitive types, directly override the config key
           config[key] = overrides[key]
