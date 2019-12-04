@@ -13,6 +13,7 @@ const paths = require('../../config/paths')
 const modules = require('../../config/modules')
 
 module.exports = (resolve, rootDir, isEjecting) => {
+  // Use this instead of `paths.testsSetup` to avoid putting an absolute filename into configuration after ejecting.
   const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/)
   const setupTestsFileExtension =
     (setupTestsMatches && setupTestsMatches[1]) || 'js'
@@ -55,6 +56,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
       '^react-native$': 'react-native-web',
       '@src/(.*)': '<rootDir>/src/$1',
       '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+      ...(modules.jestAliases || {}),
     },
     moduleFileExtensions: [...paths.moduleFileExtensions, 'node'].filter(
       ext => !ext.includes('mjs'),
@@ -69,16 +71,19 @@ module.exports = (resolve, rootDir, isEjecting) => {
   }
   const overrides = Object.assign({}, require(paths.appPackageJson).jest)
   const supportedKeys = [
+    'clearMocks',
     'collectCoverageFrom',
+    'coveragePathIgnorePatterns',
     'coverageReporters',
     'coverageThreshold',
-    'coveragePathIgnorePatterns',
+    'displayName',
     'extraGlobals',
     'globalSetup',
     'globalTeardown',
     'moduleNameMapper',
     'resetMocks',
     'resetModules',
+    'restoreMocks',
     'snapshotSerializers',
     'transform',
     'transformIgnorePatterns',
